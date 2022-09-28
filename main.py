@@ -55,9 +55,11 @@ def get_weather(region):
     response = get(weather_url, headers=headers).json()
     """
     # 天气
-    weather = "晴"#response["now"]["text"]
+    weather = "晴天"
+    #response["now"]["text"]
     # 当前温度
-    temp = "30"#response["now"]["temp"] + u"\N{DEGREE SIGN}" + "C"
+    temp = "30"
+    #response["now"]["temp"] + u"\N{DEGREE SIGN}" + "C"
     # 风向
     wind_dir = "东北风"#response["now"]["windDir"]
     return weather, temp, wind_dir
