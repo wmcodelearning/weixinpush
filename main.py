@@ -32,7 +32,8 @@ def get_access_token():
  
  
 def get_weather(region):
-    headers = {
+   """
+   headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
     }
@@ -52,12 +53,13 @@ def get_weather(region):
         location_id = response["location"][0]["id"]
     weather_url = "https://devapi.qweather.com/v7/weather/now?location={}&key={}".format(location_id, key)
     response = get(weather_url, headers=headers).json()
+    """
     # 天气
-    weather = response["now"]["text"]
+    weather = "晴"#response["now"]["text"]
     # 当前温度
-    temp = response["now"]["temp"] + u"\N{DEGREE SIGN}" + "C"
+    temp = "30"#response["now"]["temp"] + u"\N{DEGREE SIGN}" + "C"
     # 风向
-    wind_dir = response["now"]["windDir"]
+    wind_dir = "东北风"#response["now"]["windDir"]
     return weather, temp, wind_dir
  
  
